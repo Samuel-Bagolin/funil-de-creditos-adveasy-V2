@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Funil de Créditos - AdvEasy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
     <style>
         :root {
@@ -18,7 +20,9 @@
             --card-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
@@ -37,7 +41,9 @@
             margin-bottom: 28px;
         }
 
-        header img { height: 70px; }
+        header img {
+            height: 70px;
+        }
 
         header h1 {
             margin: 12px 0 4px;
@@ -46,7 +52,9 @@
             color: var(--primary-dark);
         }
 
-        header h1 span { color: var(--secondary-gold); }
+        header h1 span {
+            color: var(--secondary-gold);
+        }
 
         header p {
             max-width: 700px;
@@ -80,16 +88,19 @@
         }
 
         .icon-box {
-            width: 34px; height: 34px;
+            width: 34px;
+            height: 34px;
             border-radius: 12px;
             background: #fff7df;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--secondary-gold);
             margin-right: 10px;
         }
 
         .primary-card .icon-box {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .divider {
@@ -104,9 +115,19 @@
             gap: 25px;
         }
 
-        .row-label { font-size: 0.78rem; opacity: 0.8; }
-        .row-value { font-size: 1.9rem; font-weight: 800; }
-        .gold { color: var(--secondary-gold); }
+        .row-label {
+            font-size: 0.78rem;
+            opacity: 0.8;
+        }
+
+        .row-value {
+            font-size: 1.9rem;
+            font-weight: 800;
+        }
+
+        .gold {
+            color: var(--secondary-gold);
+        }
 
         .lead-block {
             display: flex;
@@ -137,7 +158,8 @@
         }
 
         .stepper button {
-            width: 30px; height: 30px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             border: none;
             background: var(--secondary-gold);
@@ -156,7 +178,7 @@
 
         .summary-grid {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
         }
 
@@ -168,10 +190,20 @@
             border: 1px solid #e5e7eb;
         }
 
-        .summary-label { font-size: 0.78rem; color: #6b7280; }
-        .summary-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary-gold); }
+        .summary-label {
+            font-size: 0.78rem;
+            color: #6b7280;
+        }
 
-        .roi-card { max-width: 430px; }
+        .summary-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary-gold);
+        }
+
+        .roi-card {
+            max-width: 430px;
+        }
 
         .roi-row {
             display: flex;
@@ -180,8 +212,16 @@
             border-bottom: 1px solid #eef2f7;
         }
 
-        .roi-label { font-size: 0.82rem; color: #6b7280; }
-        .roi-value { font-size: 0.9rem; font-weight: 700; color: var(--primary-dark); }
+        .roi-label {
+            font-size: 0.82rem;
+            color: #6b7280;
+        }
+
+        .roi-value {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
 
         .roi-badge {
             display: inline-flex;
@@ -191,296 +231,297 @@
             margin-top: 10px;
         }
 
-        .positive { background:#d1fae5; color:#047857; }
-        .negative { background:#fee2e2; color:#b91c1c; }
+        .positive {
+            background: #d1fae5;
+            color: #047857;
+        }
+
+        .negative {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        @media (max-width: 1000px) {
+            .top-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
+    <div class="page-container">
+        <header>
+            <img src="https://adveasy.com.br/wp-content/uploads/2023/01/result-3.svg" />
+            <h1>Funil de <span>Créditos</span> - AdvEasy</h1>
+            <p>Gerencie seus créditos e visualize seu retorno financeiro real.</p>
+        </header>
 
-<div class="page-container">
+        <div class="top-grid">
+            <!-- SALDO -->
+            <div class="card primary-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
+                    <div class="card-title">Saldo de Créditos</div>
+                </div>
 
-<header>
-    <img src="https://adveasy.com.br/wp-content/uploads/2023/01/result-3.svg">
-    <h1>Funil de <span>Créditos</span> - AdvEasy</h1>
-    <p>Gerencie seus créditos e visualize seu retorno financeiro real.</p>
-</header>
+                <div class="divider"></div>
 
-<div class="top-grid">
+                <div class="row-flex">
+                    <div>
+                        <div class="row-label">Saldo inicial</div>
+                        <div class="row-value">15</div>
+                    </div>
+                    <div>
+                        <div class="row-label">Créditos necessários</div>
+                        <div class="row-value gold" id="requiredCreditsDisplay">0</div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- SALDO -->
-    <div class="card primary-card">
-        <div class="card-header">
-            <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
-            <div>
-                <div class="card-title">Saldo de Créditos</div>
+            <!-- LEADS -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-user-plus"></i></div>
+                    <div class="card-title">Leads por Temperatura</div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- QUENTE -->
+                <div class="lead-block">
+                    <div>
+                        <div class="lead-title">Leads Quentes</div>
+                        <div class="lead-subtitle">30% de conversão</div>
+                        <span class="lead-tag">2 créditos</span>
+                    </div>
+                    <div class="stepper">
+                        <button data-target="hotInput" data-direction="down">−</button>
+                        <input id="hotInput" value="0" />
+                        <button data-target="hotInput" data-direction="up">+</button>
+                    </div>
+                </div>
+
+                <!-- MORNO -->
+                <div class="lead-block">
+                    <div>
+                        <div class="lead-title">Leads Mornos</div>
+                        <div class="lead-subtitle">15% de conversão</div>
+                        <span class="lead-tag">1 crédito</span>
+                    </div>
+                    <div class="stepper">
+                        <button data-target="warmInput" data-direction="down">−</button>
+                        <input id="warmInput" value="0" />
+                        <button data-target="warmInput" data-direction="up">+</button>
+                    </div>
+                </div>
+
+                <!-- FRIO -->
+                <div class="lead-block">
+                    <div>
+                        <div class="lead-title">Leads Frios</div>
+                        <div class="lead-subtitle">5% de conversão</div>
+                        <span class="lead-tag">0,5 crédito</span>
+                    </div>
+                    <div class="stepper">
+                        <button data-target="coldInput" data-direction="down">−</button>
+                        <input id="coldInput" value="0" />
+                        <button data-target="coldInput" data-direction="up">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FUNIL -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="card-title">Funil de Oportunidades</div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="summary-grid">
+                    <div class="summary-box">
+                        <div class="summary-label">Créditos gastos</div>
+                        <div class="summary-value" id="creditsSpentDisplay">0</div>
+                    </div>
+
+                    <div class="summary-box">
+                        <div class="summary-label">Oportunidades totais</div>
+                        <div class="summary-value" id="totalOpportunitiesDisplay">0</div>
+                    </div>
+
+                    <div class="summary-box">
+                        <div class="summary-label">Conversão Quente (30%)</div>
+                        <div class="summary-value" id="hotConversionDisplay">0</div>
+                    </div>
+
+                    <div class="summary-box">
+                        <div class="summary-label">Conversão Morno (15%)</div>
+                        <div class="summary-value" id="warmConversionDisplay">0</div>
+                    </div>
+
+                    <div class="summary-box">
+                        <div class="summary-label">Conversão Frio (5%)</div>
+                        <div class="summary-value" id="coldConversionDisplay">0</div>
+                    </div>
+
+                    <div class="summary-box">
+                        <div class="summary-label">Total Conversão</div>
+                        <div class="summary-value" id="totalConversionDisplay">0</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="divider"></div>
+        <!-- ROI CARD -->
+        <div class="card roi-card" style="margin-top: 30px">
+            <div class="card-header">
+                <div class="icon-box">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <div class="card-title">ROI (Retorno Financeiro)</div>
+            </div>
 
-        <div class="row-flex">
-            <div>
-                <div class="row-label">Saldo inicial</div>
-                <div class="row-value">15</div>
-            </div>
-            <div>
-                <div class="row-label">Créditos necessários</div>
-                <div class="row-value gold" id="requiredCreditsDisplay">0</div>
-            </div>
-        </div>
-    </div>
+            <div class="divider"></div>
 
-    <!-- LEADS -->
-    <div class="card">
+            <div class="roi-row">
+                <span class="roi-label">Ticket médio por consultoria:</span>
+                <input
+                    id="ticketInput"
+                    type="number"
+                    min="1"
+                    value="250"
+                    style="
+                        width: 100px;
+                        text-align: right;
+                        border: 1px solid #ccc;
+                        padding: 4px;
+                        border-radius: 6px;
+                    "
+                />
+            </div>
 
-        <div class="card-header">
-            <div class="icon-box"><i class="fa-solid fa-user-plus"></i></div>
-            <div>
-                <div class="card-title">Leads por Temperatura</div>
+            <div class="roi-row">
+                <span class="roi-label">Receita potencial:</span>
+                <span class="roi-value" id="minRevenueDisplay">R$ 0,00</span>
             </div>
-        </div>
 
-        <div class="divider"></div>
+            <div class="roi-row">
+                <span class="roi-label">Custo estimado de créditos extras:</span>
+                <span class="roi-value" id="creditsCostDisplay">R$ 0,00</span>
+            </div>
 
-        <!-- QUENTES -->
-        <div class="lead-block">
-            <div>
-                <div class="lead-title">Leads Quentes</div>
-                <div class="lead-subtitle">30% de conversão</div>
-                <span class="lead-tag">2 créditos</span>
+            <div class="roi-row">
+                <span class="roi-label">Investimento total:</span>
+                <span class="roi-value" id="investmentDisplay">R$ 165,00</span>
             </div>
-            <div class="stepper">
-                <button data-target="hotInput" data-direction="down">−</button>
-                <input id="hotInput" value="0">
-                <button data-target="hotInput" data-direction="up">+</button>
-            </div>
-        </div>
 
-        <!-- MORNOS -->
-        <div class="lead-block">
-            <div>
-                <div class="lead-title">Leads Mornos</div>
-                <div class="lead-subtitle">15% de conversão</div>
-                <span class="lead-tag">1 crédito</span>
+            <div class="roi-row">
+                <span class="roi-label">ROI:</span>
+                <span class="roi-value" id="roiValueDisplay">R$ 0,00</span>
             </div>
-            <div class="stepper">
-                <button data-target="warmInput" data-direction="down">−</button>
-                <input id="warmInput" value="0">
-                <button data-target="warmInput" data-direction="up">+</button>
-            </div>
-        </div>
 
-        <!-- FRIOS -->
-        <div class="lead-block">
-            <div>
-                <div class="lead-title">Leads Frios</div>
-                <div class="lead-subtitle">5% de conversão</div>
-                <span class="lead-tag">0,5 crédito</span>
-            </div>
-            <div class="stepper">
-                <button data-target="coldInput" data-direction="down">−</button>
-                <input id="coldInput" value="0">
-                <button data-target="coldInput" data-direction="up">+</button>
+            <div id="roiBadge" class="roi-badge negative">
+                Retorno potencial ainda não atingido
             </div>
         </div>
-
     </div>
 
-    <!-- FUNIL -->
-    <div class="card">
+    <script>
+        const INITIAL_CREDITS = 15;
+        const PLATFORM_INVESTMENT = 165;
 
-        <div class="card-header">
-            <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
-            <div>
-                <div class="card-title">Funil de Oportunidades</div>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="summary-grid">
-
-            <div class="summary-box">
-                <div class="summary-label">Créditos gastos</div>
-                <div class="summary-value" id="creditsSpentDisplay">0</div>
-            </div>
-
-            <div class="summary-box">
-                <div class="summary-label">Oportunidades totais</div>
-                <div class="summary-value" id="totalOpportunitiesDisplay">0</div>
-            </div>
-
-            <div class="summary-box">
-                <div class="summary-label">Conversão Quente (30%)</div>
-                <div class="summary-value" id="hotConversionDisplay">0</div>
-            </div>
-
-            <div class="summary-box">
-                <div class="summary-label">Conversão Morno (15%)</div>
-                <div class="summary-value" id="warmConversionDisplay">0</div>
-            </div>
-
-            <div class="summary-box">
-                <div class="summary-label">Conversão Frio (5%)</div>
-                <div class="summary-value" id="coldConversionDisplay">0</div>
-            </div>
-
-            <div class="summary-box">
-                <div class="summary-label">Total Conversão</div>
-                <div class="summary-value" id="totalConversionDisplay">0</div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-<!-- ROI -->
-<div class="card roi-card" style="margin-top:30px;">
-    <div class="card-header">
-        <div class="icon-box"><i class="fa-solid fa-arrow-trend-up"></i></div>
-        <div>
-            <div class="card-title">4ª Etapa: ROI (Retorno Financeiro)</div>
-        </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="roi-row">
-        <span class="roi-label">Ticket médio por consultoria:</span>
-        <input id="ticketInput" type="number" min="1" value="250"
-               style="width:100px;text-align:right;border:1px solid #ccc;padding:4px;border-radius:6px;">
-    </div>
-
-    <div class="roi-row">
-        <span class="roi-label">Receita mínima (com total conversão):</span>
-        <span class="roi-value" id="minRevenueDisplay">R$ 0,00</span>
-    </div>
-
-    <div class="roi-row">
-        <span class="roi-label">Receita máxima (com total conversão):</span>
-        <span class="roi-value" id="maxRevenueDisplay">R$ 0,00</span>
-    </div>
-
-    <div class="roi-row">
-        <span class="roi-label">Custo estimado de créditos extras:</span>
-        <span class="roi-value" id="creditsCostDisplay">R$ 0,00</span>
-    </div>
-
-    <div class="roi-row">
-        <span class="roi-label">Investimento total:</span>
-        <span class="roi-value" id="investmentDisplay">R$ 165,00</span>
-    </div>
-
-    <div class="roi-row">
-        <span class="roi-label">ROI mínimo:</span>
-        <span class="roi-value" id="roiMinDisplay">R$ 0,00</span>
-    </div>
-
-    <div class="roi-row">
-        <span class="roi-label">ROI máximo:</span>
-        <span class="roi-value" id="roiMaxDisplay">R$ 0,00</span>
-    </div>
-
-    <div id="roiBadge" class="roi-badge negative">
-        Retorno potencial ainda não atingido
-    </div>
-</div>
-
-</div>
-
-<script>
-    const INITIAL_CREDITS = 15;
-    const PLATFORM_INVESTMENT = 165;
-
-    const COSTS = {
-        hot: 2,
-        warm: 1,
-        cold: 0.5
-    };
-
-    function brl(v){
-        return v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-    }
-
-    function update(){
-        const hot = parseInt(document.getElementById("hotInput").value)||0;
-        const warm = parseInt(document.getElementById("warmInput").value)||0;
-        const cold = parseInt(document.getElementById("coldInput").value)||0;
-
-        const spent = hot*2 + warm*1 + cold*0.5;
-        document.getElementById("creditsSpentDisplay").textContent = spent;
-
-        const opp = hot + warm + cold;
-        document.getElementById("totalOpportunitiesDisplay").textContent = opp;
-
-        const convHot = hot * 0.30;
-        const convWarm = warm * 0.15;
-        const convCold = cold * 0.05;
-
-        document.getElementById("hotConversionDisplay").textContent = convHot.toFixed(2);
-        document.getElementById("warmConversionDisplay").textContent = convWarm.toFixed(2);
-        document.getElementById("coldConversionDisplay").textContent = convCold.toFixed(2);
-
-        const totalConv = convHot + convWarm + convCold;
-        document.getElementById("totalConversionDisplay").textContent = totalConv.toFixed(2);
-
-        const balance = INITIAL_CREDITS - spent;
-        const required = balance < 0 ? -balance : 0;
-        document.getElementById("requiredCreditsDisplay").textContent = required.toFixed(1);
-
-        let cost = 0;
-        if(required > 0){
-            if(required <= 10) cost = 120;
-            else if(required <= 20) cost = 200;
-            else cost = 200 + 120;
+        function brl(v) {
+            return v.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            });
         }
-        document.getElementById("creditsCostDisplay").textContent = brl(cost);
 
-        const ticket = parseInt(document.getElementById("ticketInput").value)||0;
+        function update() {
+            const hot = Number(document.getElementById("hotInput").value || 0);
+            const warm = Number(document.getElementById("warmInput").value || 0);
+            const cold = Number(document.getElementById("coldInput").value || 0);
 
-        const minRevenue = totalConv * ticket;
-        document.getElementById("minRevenueDisplay").textContent = brl(minRevenue);
+            const ticket = Number(document.getElementById("ticketInput").value || 0);
 
-        const maxRevenue = minRevenue;
-        document.getElementById("maxRevenueDisplay").textContent = brl(maxRevenue);
+            const spent = hot * 2 + warm * 1 + cold * 0.5;
+            document.getElementById("creditsSpentDisplay").textContent = spent;
 
-        const investment = PLATFORM_INVESTMENT + cost;
-        document.getElementById("investmentDisplay").textContent = brl(investment);
+            const opp = hot + warm + cold;
+            document.getElementById("totalOpportunitiesDisplay").textContent = opp;
 
-        const roiMin = minRevenue - investment;
-        document.getElementById("roiMinDisplay").textContent = brl(roiMin);
+            const convHot = hot * 0.3;
+            const convWarm = warm * 0.15;
+            const convCold = cold * 0.05;
 
-        const roiMax = roiMin;
-        document.getElementById("roiMaxDisplay").textContent = brl(roiMax);
+            document.getElementById("hotConversionDisplay").textContent =
+                convHot.toFixed(2);
+            document.getElementById("warmConversionDisplay").textContent =
+                convWarm.toFixed(2);
+            document.getElementById("coldConversionDisplay").textContent =
+                convCold.toFixed(2);
 
-        const badge = document.getElementById("roiBadge");
-        if(roiMax > 0){
-            badge.textContent = "Retorno potencial positivo";
-            badge.classList.add("positive");
-            badge.classList.remove("negative");
-        } else {
-            badge.textContent = "Retorno potencial ainda não atingido";
-            badge.classList.add("negative");
-            badge.classList.remove("positive");
+            const totalConv = convHot + convWarm + convCold;
+            document.getElementById("totalConversionDisplay").textContent =
+                totalConv.toFixed(2);
+
+            const balance = INITIAL_CREDITS - spent;
+            const required = balance < 0 ? -balance : 0;
+            document.getElementById("requiredCreditsDisplay").textContent =
+                required.toFixed(1);
+
+            let cost = 0;
+            if (required > 0) {
+                if (required <= 10) cost = 120;
+                else if (required <= 20) cost = 200;
+                else cost = 200 + 120;
+            }
+            document.getElementById("creditsCostDisplay").textContent = brl(cost);
+
+            const investment = PLATFORM_INVESTMENT + cost;
+            document.getElementById("investmentDisplay").textContent =
+                brl(investment);
+
+            const revenue = totalConv * ticket;
+            document.getElementById("minRevenueDisplay").textContent = brl(revenue);
+
+            const roi = revenue - investment;
+            document.getElementById("roiValueDisplay").textContent = brl(roi);
+
+            const badge = document.getElementById("roiBadge");
+            if (roi > 0) {
+                badge.textContent = "Retorno potencial positivo";
+                badge.classList.add("positive");
+                badge.classList.remove("negative");
+            } else {
+                badge.textContent = "Retorno potencial ainda não atingido";
+                badge.classList.add("negative");
+                badge.classList.remove("positive");
+            }
         }
-    }
 
-    document.querySelectorAll(".stepper button").forEach(btn=>{
-        btn.onclick = ()=>{
+        document
+            .querySelectorAll(".stepper button")
+            .forEach((btn) => (btn.onclick = () => step(btn)));
+
+        function step(btn) {
             const input = document.getElementById(btn.dataset.target);
-            let val = parseInt(input.value)||0;
-            if(btn.dataset.direction==="up") val++;
-            else val = Math.max(0,val-1);
+            let val = Number(input.value || 0);
+
+            if (btn.dataset.direction === "up") val++;
+            else val = Math.max(0, val - 1);
+
             input.value = val;
             update();
-        };
-    });
+        }
 
-    document.querySelectorAll("input").forEach(i=>i.oninput = update);
+        document
+            .querySelectorAll("input")
+            .forEach((i) => (i.oninput = () => update()));
 
-    update();
-</script>
-
+        update();
+    </script>
 </body>
 </html>
