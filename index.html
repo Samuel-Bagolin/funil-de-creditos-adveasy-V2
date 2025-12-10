@@ -5,7 +5,6 @@
     <title>Funil de Créditos - AdvEasy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
@@ -25,7 +24,6 @@
             margin: 0;
             background: #f3f4f6;
             font-family: system-ui, sans-serif;
-            color: var(--text-dark);
         }
 
         .page-container {
@@ -106,7 +104,6 @@
             gap: 25px;
         }
 
-        .row-item {}
         .row-label { font-size: 0.78rem; opacity: 0.8; }
         .row-value { font-size: 1.9rem; font-weight: 800; }
         .gold { color: var(--secondary-gold); }
@@ -183,8 +180,6 @@
             border-bottom: 1px solid #eef2f7;
         }
 
-        .roi-row:last-child { border-bottom: none; }
-
         .roi-label { font-size: 0.82rem; color: #6b7280; }
         .roi-value { font-size: 0.9rem; font-weight: 700; color: var(--primary-dark); }
 
@@ -198,15 +193,12 @@
 
         .positive { background:#d1fae5; color:#047857; }
         .negative { background:#fee2e2; color:#b91c1c; }
-
-        @media (max-width:1000px){
-            .top-grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
 
 <div class="page-container">
+
 <header>
     <img src="https://adveasy.com.br/wp-content/uploads/2023/01/result-3.svg">
     <h1>Funil de <span>Créditos</span> - AdvEasy</h1>
@@ -215,13 +207,12 @@
 
 <div class="top-grid">
 
-    <!-- CARD 1 - SALDO -->
+    <!-- SALDO -->
     <div class="card primary-card">
         <div class="card-header">
             <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
             <div>
                 <div class="card-title">Saldo de Créditos</div>
-                <div class="card-subtitle">Créditos disponíveis</div>
             </div>
         </div>
 
@@ -239,13 +230,13 @@
         </div>
     </div>
 
-    <!-- CARD 2 - LEADS -->
+    <!-- LEADS -->
     <div class="card">
+
         <div class="card-header">
             <div class="icon-box"><i class="fa-solid fa-user-plus"></i></div>
             <div>
                 <div class="card-title">Leads por Temperatura</div>
-                <div class="card-subtitle">Configure suas oportunidades</div>
             </div>
         </div>
 
@@ -255,8 +246,8 @@
         <div class="lead-block">
             <div>
                 <div class="lead-title">Leads Quentes</div>
-                <div class="lead-subtitle">Alta intenção de contratação</div>
-                <span class="lead-tag">2 créditos por lead</span>
+                <div class="lead-subtitle">30% de conversão</div>
+                <span class="lead-tag">2 créditos</span>
             </div>
             <div class="stepper">
                 <button data-target="hotInput" data-direction="down">−</button>
@@ -269,8 +260,8 @@
         <div class="lead-block">
             <div>
                 <div class="lead-title">Leads Mornos</div>
-                <div class="lead-subtitle">Interesse moderado</div>
-                <span class="lead-tag">1 crédito por lead</span>
+                <div class="lead-subtitle">15% de conversão</div>
+                <span class="lead-tag">1 crédito</span>
             </div>
             <div class="stepper">
                 <button data-target="warmInput" data-direction="down">−</button>
@@ -283,8 +274,8 @@
         <div class="lead-block">
             <div>
                 <div class="lead-title">Leads Frios</div>
-                <div class="lead-subtitle">Baixa intenção</div>
-                <span class="lead-tag">0,5 crédito por lead</span>
+                <div class="lead-subtitle">5% de conversão</div>
+                <span class="lead-tag">0,5 crédito</span>
             </div>
             <div class="stepper">
                 <button data-target="coldInput" data-direction="down">−</button>
@@ -292,21 +283,23 @@
                 <button data-target="coldInput" data-direction="up">+</button>
             </div>
         </div>
+
     </div>
 
-    <!-- CARD 3 - FUNIL -->
+    <!-- FUNIL -->
     <div class="card">
+
         <div class="card-header">
             <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
             <div>
                 <div class="card-title">Funil de Oportunidades</div>
-                <div class="card-subtitle">Créditos → Oportunidades → Fechamentos</div>
             </div>
         </div>
 
         <div class="divider"></div>
 
         <div class="summary-grid">
+
             <div class="summary-box">
                 <div class="summary-label">Créditos gastos</div>
                 <div class="summary-value" id="creditsSpentDisplay">0</div>
@@ -318,45 +311,54 @@
             </div>
 
             <div class="summary-box">
-                <div class="summary-label">Fechamentos mín. (10%)</div>
-                <div class="summary-value" id="minClosuresDisplay">0</div>
+                <div class="summary-label">Conversão Quente (30%)</div>
+                <div class="summary-value" id="hotConversionDisplay">0</div>
             </div>
 
             <div class="summary-box">
-                <div class="summary-label">Fechamentos máx. (25%)</div>
-                <div class="summary-value" id="maxClosuresDisplay">0</div>
+                <div class="summary-label">Conversão Morno (15%)</div>
+                <div class="summary-value" id="warmConversionDisplay">0</div>
             </div>
+
+            <div class="summary-box">
+                <div class="summary-label">Conversão Frio (5%)</div>
+                <div class="summary-value" id="coldConversionDisplay">0</div>
+            </div>
+
+            <div class="summary-box">
+                <div class="summary-label">Total Conversão</div>
+                <div class="summary-value" id="totalConversionDisplay">0</div>
+            </div>
+
         </div>
     </div>
 
 </div>
 
-<!-- ROI CARD -->
+<!-- ROI -->
 <div class="card roi-card" style="margin-top:30px;">
     <div class="card-header">
         <div class="icon-box"><i class="fa-solid fa-arrow-trend-up"></i></div>
         <div>
-            <div class="card-title">ROI (Retorno Financeiro)</div>
-            <div class="card-subtitle">Resultado estimado</div>
+            <div class="card-title">4ª Etapa: ROI (Retorno Financeiro)</div>
         </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- Ticket editável -->
     <div class="roi-row">
         <span class="roi-label">Ticket médio por consultoria:</span>
-        <input id="ticketInput" type="number" value="250" min="1"
-               style="width:100px;text-align:right;border:1px solid #ddd;padding:4px;border-radius:6px;">
+        <input id="ticketInput" type="number" min="1" value="250"
+               style="width:100px;text-align:right;border:1px solid #ccc;padding:4px;border-radius:6px;">
     </div>
 
     <div class="roi-row">
-        <span class="roi-label">Receita mínima (10%):</span>
+        <span class="roi-label">Receita mínima (com total conversão):</span>
         <span class="roi-value" id="minRevenueDisplay">R$ 0,00</span>
     </div>
 
     <div class="roi-row">
-        <span class="roi-label">Receita máxima (25%):</span>
+        <span class="roi-label">Receita máxima (com total conversão):</span>
         <span class="roi-value" id="maxRevenueDisplay">R$ 0,00</span>
     </div>
 
@@ -371,12 +373,12 @@
     </div>
 
     <div class="roi-row">
-        <span class="roi-label">ROI estimado mínimo:</span>
+        <span class="roi-label">ROI mínimo:</span>
         <span class="roi-value" id="roiMinDisplay">R$ 0,00</span>
     </div>
 
     <div class="roi-row">
-        <span class="roi-label">ROI estimado máximo:</span>
+        <span class="roi-label">ROI máximo:</span>
         <span class="roi-value" id="roiMaxDisplay">R$ 0,00</span>
     </div>
 
@@ -391,75 +393,91 @@
     const INITIAL_CREDITS = 15;
     const PLATFORM_INVESTMENT = 165;
 
-    const COSTS = { hot: 2, warm: 1, cold: 0.5 };
+    const COSTS = {
+        hot: 2,
+        warm: 1,
+        cold: 0.5
+    };
 
-    function brl(x) {
-        return x.toLocaleString("pt-BR", {style:"currency",currency:"BRL"});
+    function brl(v){
+        return v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
     }
-
-    function step(btn){
-        const target = document.getElementById(btn.dataset.target);
-        const d = btn.dataset.direction==="up" ? 1 : -1;
-        target.value = Math.max(0, (parseInt(target.value)||0) + d);
-        update();
-    }
-
-    document.querySelectorAll(".stepper button").forEach(b => b.onclick = () => step(b));
-
-    document.querySelectorAll("input").forEach(i => i.oninput = update);
 
     function update(){
         const hot = parseInt(document.getElementById("hotInput").value)||0;
         const warm = parseInt(document.getElementById("warmInput").value)||0;
         const cold = parseInt(document.getElementById("coldInput").value)||0;
-        const ticket = parseFloat(document.getElementById("ticketInput").value)||0;
 
-        const spent = hot*COSTS.hot + warm*COSTS.warm + cold*COSTS.cold;
-        document.getElementById("creditsSpentDisplay").textContent = spent.toFixed(1);
+        const spent = hot*2 + warm*1 + cold*0.5;
+        document.getElementById("creditsSpentDisplay").textContent = spent;
 
         const opp = hot + warm + cold;
         document.getElementById("totalOpportunitiesDisplay").textContent = opp;
 
-        const minClose = opp*0.10;
-        const maxClose = opp*0.25;
-        document.getElementById("minClosuresDisplay").textContent = minClose.toFixed(1);
-        document.getElementById("maxClosuresDisplay").textContent = maxClose.toFixed(1);
+        const convHot = hot * 0.30;
+        const convWarm = warm * 0.15;
+        const convCold = cold * 0.05;
+
+        document.getElementById("hotConversionDisplay").textContent = convHot.toFixed(2);
+        document.getElementById("warmConversionDisplay").textContent = convWarm.toFixed(2);
+        document.getElementById("coldConversionDisplay").textContent = convCold.toFixed(2);
+
+        const totalConv = convHot + convWarm + convCold;
+        document.getElementById("totalConversionDisplay").textContent = totalConv.toFixed(2);
 
         const balance = INITIAL_CREDITS - spent;
         const required = balance < 0 ? -balance : 0;
         document.getElementById("requiredCreditsDisplay").textContent = required.toFixed(1);
 
-        const creditsCost = required <= 0 ? 0 : 
-            required <= 10 ? 120 :
-            required <= 20 ? 200 :
-            200 + 120;
+        let cost = 0;
+        if(required > 0){
+            if(required <= 10) cost = 120;
+            else if(required <= 20) cost = 200;
+            else cost = 200 + 120;
+        }
+        document.getElementById("creditsCostDisplay").textContent = brl(cost);
 
-        document.getElementById("creditsCostDisplay").textContent = brl(creditsCost);
+        const ticket = parseInt(document.getElementById("ticketInput").value)||0;
 
-        const investment = PLATFORM_INVESTMENT + creditsCost;
+        const minRevenue = totalConv * ticket;
+        document.getElementById("minRevenueDisplay").textContent = brl(minRevenue);
+
+        const maxRevenue = minRevenue;
+        document.getElementById("maxRevenueDisplay").textContent = brl(maxRevenue);
+
+        const investment = PLATFORM_INVESTMENT + cost;
         document.getElementById("investmentDisplay").textContent = brl(investment);
 
-        const minRev = minClose * ticket;
-        const maxRev = maxClose * ticket;
-        document.getElementById("minRevenueDisplay").textContent = brl(minRev);
-        document.getElementById("maxRevenueDisplay").textContent = brl(maxRev);
-
-        const roiMin = minRev - investment;
-        const roiMax = maxRev - investment;
+        const roiMin = minRevenue - investment;
         document.getElementById("roiMinDisplay").textContent = brl(roiMin);
+
+        const roiMax = roiMin;
         document.getElementById("roiMaxDisplay").textContent = brl(roiMax);
 
         const badge = document.getElementById("roiBadge");
-        if (roiMax > 0){
+        if(roiMax > 0){
             badge.textContent = "Retorno potencial positivo";
-            badge.classList.remove("negative");
             badge.classList.add("positive");
+            badge.classList.remove("negative");
         } else {
             badge.textContent = "Retorno potencial ainda não atingido";
-            badge.classList.remove("positive");
             badge.classList.add("negative");
+            badge.classList.remove("positive");
         }
     }
+
+    document.querySelectorAll(".stepper button").forEach(btn=>{
+        btn.onclick = ()=>{
+            const input = document.getElementById(btn.dataset.target);
+            let val = parseInt(input.value)||0;
+            if(btn.dataset.direction==="up") val++;
+            else val = Math.max(0,val-1);
+            input.value = val;
+            update();
+        };
+    });
+
+    document.querySelectorAll("input").forEach(i=>i.oninput = update);
 
     update();
 </script>
