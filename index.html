@@ -19,32 +19,38 @@
             --card-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            background: var(--bg-light);
+            background: radial-gradient(circle at top, #ffffff 0, #f3f4f6 45%, #e5e7eb 100%);
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text-dark);
         }
 
         .page-container {
-            max-width: 1250px;
-            margin: auto;
-            padding: 30px 15px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 16px 56px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         header img {
             height: 70px;
+            object-fit: contain;
         }
 
         header h1 {
-            margin: 10px 0 5px;
-            color: var(--primary-dark);
-            font-size: 1.9rem;
+            margin: 12px 0 4px;
+            font-size: 2rem;
             font-weight: 800;
+            color: var(--primary-dark);
         }
 
         header h1 span {
@@ -52,45 +58,54 @@
         }
 
         header p {
-            max-width: 700px;
-            margin: auto;
-            color: #4b5563;
+            max-width: 680px;
+            margin: 0 auto;
             font-size: 0.95rem;
+            color: #4b5563;
         }
 
-        .grid {
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .top-grid {
             display: grid;
-            grid-template-columns: 1.1fr 1.7fr 1.7fr;
+            grid-template-columns: 1.1fr 1.4fr 1.4fr;
             gap: 20px;
+            align-items: stretch;
         }
 
         .card {
-            padding: 20px;
-            background: #fff;
+            background: #ffffff;
             border-radius: var(--card-radius);
             box-shadow: var(--card-shadow);
+            padding: 18px 20px 20px;
+            position: relative;
         }
 
         .card-header {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .icon-box {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 12px;
-            background: #fff7df;
+            background-color: #fff7df;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--secondary-gold);
             margin-right: 10px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .card-title {
+            font-size: 1rem;
             font-weight: 700;
             color: var(--primary-dark);
         }
@@ -101,46 +116,91 @@
         }
 
         .primary-card {
-            background: var(--primary-dark);
-            color: #fff;
-        }
-
-        .primary-card .icon-box {
-            background: rgba(255,255,255,0.12);
+            background: linear-gradient(135deg, var(--primary-dark), #061322);
+            color: #e5e7eb;
         }
 
         .primary-card .card-title {
-            color: #fff;
+            color: #ffffff;
+        }
+
+        .primary-card .icon-box {
+            background: rgba(15,23,42,0.4);
+            color: var(--secondary-gold);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, rgba(148,163,184,0.4), transparent);
+            margin: 10px 0 14px;
         }
 
         .row-flex {
             display: flex;
             justify-content: space-between;
-            margin-top: 15px;
+            gap: 22px;
         }
 
         .row-item {
             flex: 1;
         }
 
-        .row-item + .row-item {
-            margin-left: 18px;
-            border-left: 1px solid rgba(255,255,255,0.35);
-            padding-left: 18px;
-        }
-
         .row-label {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             opacity: 0.8;
         }
 
         .row-value {
-            font-size: 1.8rem;
+            margin-top: 4px;
+            font-size: 1.9rem;
             font-weight: 800;
         }
 
         .row-value.gold {
             color: var(--secondary-gold);
+        }
+
+        .leads-card .section-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+        }
+
+        .lead-block {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .lead-info {
+            flex: 1;
+        }
+
+        .lead-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .lead-subtitle {
+            font-size: 0.78rem;
+            color: #9ca3af;
+        }
+
+        .lead-tag {
+            display: inline-flex;
+            margin-top: 4px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: #fff7df;
+            color: var(--secondary-gold);
+            font-size: 0.72rem;
+            font-weight: 600;
         }
 
         .stepper {
@@ -153,64 +213,89 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: var(--secondary-gold);
             border: none;
-            color: #fff;
+            background: var(--secondary-gold);
+            color: #ffffff;
+            font-size: 0.9rem;
             cursor: pointer;
-            font-size: 0.85rem;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+            transition: transform 0.08s ease, box-shadow 0.08s ease;
+        }
+
+        .stepper button:active {
+            transform: translateY(1px) scale(0.97);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .stepper input {
             width: 60px;
-            text-align: center;
+            border-radius: 999px;
+            border: 1px solid #e5e7eb;
             padding: 6px;
-            border-radius: 50px;
-            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .stepper input:focus {
+            outline: none;
+            border-color: var(--secondary-gold);
+            box-shadow: 0 0 0 1px rgba(173,134,9,0.4);
         }
 
         .summary-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0,1fr));
             gap: 12px;
         }
 
         .summary-box {
-            padding: 14px;
-            background: #f8fafc;
-            border-radius: 14px;
+            background: #f9fafb;
+            border-radius: 16px;
+            padding: 12px 12px 10px;
             text-align: center;
+            border: 1px solid #edf0f4;
         }
 
-        .summary-box-title {
-            font-size: 0.8rem;
+        .summary-label {
+            font-size: 0.78rem;
             color: #6b7280;
+            margin-bottom: 4px;
         }
 
-        .summary-box-value {
-            font-size: 1.4rem;
+        .summary-value {
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--secondary-gold);
         }
 
-        /* ROI CARD – estilo igual aos outros cards */
+        .bottom-row {
+            display: flex;
+            justify-content: flex-start;
+        }
+
         .roi-card {
-            margin-top: 18px;
+            max-width: 420px;
         }
 
         .roi-row {
             display: flex;
             justify-content: space-between;
-            padding: 6px 0;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 5px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .roi-row:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
         .roi-label {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #6b7280;
         }
 
         .roi-value {
+            font-size: 0.9rem;
             font-weight: 700;
             color: var(--primary-dark);
         }
@@ -219,275 +304,386 @@
             display: inline-flex;
             padding: 6px 14px;
             border-radius: 999px;
-            font-size: 0.8rem;
-            margin-top: 8px;
+            font-size: 0.78rem;
+            margin-top: 10px;
         }
 
         .roi-badge.positive {
-            background: #d1fae5;
+            background-color: #d1fae5;
             color: #047857;
         }
 
         .roi-badge.negative {
-            background: #fee2e2;
+            background-color: #fee2e2;
             color: #b91c1c;
         }
 
-        @media(max-width:1100px){
-            .grid{grid-template-columns:1fr;}
+        .roi-note {
+            margin-top: 6px;
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 1024px) {
+            .top-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-row {
+                justify-content: center;
+            }
+
+            .roi-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 <body>
-
 <div class="page-container">
-
     <header>
-        <img src="https://adveasy.com.br/wp-content/uploads/2023/01/result-3.svg">
+        <img src="https://adveasy.com.br/wp-content/uploads/2023/01/result-3.svg" alt="AdvEasy">
         <h1>Funil de <span>Créditos</span> - AdvEasy</h1>
         <p>
-            Gerencie seus créditos mensais e veja o retorno financeiro estimado.  
-            Você começa com 15 créditos e um investimento fixo de R$ 165,00.
+            Gerencie seus créditos mensais e visualize o potencial de retorno financeiro. Você começa com
+            <strong>15 créditos</strong> e um investimento fixo de <strong>R$ 165,00</strong>.
         </p>
     </header>
 
-    <div class="grid">
-
-        <!-- CARD 1 – Saldo -->
-        <div class="card primary-card">
-            <div class="card-header">
-                <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
-                <div>
-                    <div class="card-title">Saldo de Créditos</div>
-                    <div class="card-subtitle">Controle de créditos</div>
+    <main>
+        <section class="top-grid">
+            <!-- Saldo -->
+            <div class="card primary-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
+                    <div>
+                        <div class="card-title">Saldo de Créditos</div>
+                        <div class="card-subtitle">Controle do saldo mensal</div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="row-flex">
+                    <div class="row-item">
+                        <div class="row-label">Saldo inicial</div>
+                        <div class="row-value" id="initialCreditsDisplay">15</div>
+                    </div>
+                    <div class="row-item">
+                        <div class="row-label">Créditos necessários</div>
+                        <div class="row-value gold" id="requiredCreditsDisplay">0</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="row-flex">
-                <div class="row-item">
-                    <div class="row-label">Saldo Inicial</div>
-                    <div class="row-value" id="initialCreditsDisplay">15</div>
+            <!-- Leads -->
+            <div class="card leads-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                    <div>
+                        <div class="card-title">Leads por Temperatura</div>
+                        <div class="card-subtitle">Selecione a quantidade desejada</div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+
+                <div class="section-label">Configuração de leads</div>
+
+                <div class="lead-block">
+                    <div class="lead-info">
+                        <div class="lead-title">Leads quentes</div>
+                        <div class="lead-subtitle">Alta intenção de contratação</div>
+                        <span class="lead-tag">2 créditos por lead</span>
+                    </div>
+                    <div class="stepper">
+                        <button data-target="hotInput" data-direction="down">−</button>
+                        <input id="hotInput" type="number" min="0" value="0">
+                        <button data-target="hotInput" data-direction="up">+</button>
+                    </div>
                 </div>
 
-                <div class="row-item">
-                    <div class="row-label">Créditos Necessários</div>
-                    <div class="row-value gold" id="requiredCreditsDisplay">0</div>
+                <div class="lead-block">
+                    <div class="lead-info">
+                        <div class="lead-title">Leads mornos</div>
+                        <div class="lead-subtitle">Intenção moderada</div>
+                        <span class="lead-tag">1 crédito por lead</span>
+                    </div>
+                    <div class="stepper">
+                        <button data-target="warmInput" data-direction="down">−</button>
+                        <input id="warmInput" type="number" min="0" value="0">
+                        <button data-target="warmInput" data-direction="up">+</button>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- CARD 2 – Leads -->
-        <div class="card">
-
-            <div class="card-header">
-                <div class="icon-box"><i class="fa-solid fa-users"></i></div>
-                <div>
-                    <div class="card-title">Leads por Temperatura</div>
-                    <div class="card-subtitle">Selecione a quantidade desejada</div>
-                </div>
-            </div>
-
-            <!-- QUENTES -->
-            <div class="input-row">
-                <div class="input-info">
-                    <strong>Leads Quentes</strong><br>
-                    Alta intenção<br>
-                    <span class="input-credit-tag">2 créditos</span>
-                </div>
-                <div class="stepper">
-                    <button data-target="hotInput" data-direction="down">-</button>
-                    <input id="hotInput" type="number" value="0" min="0"/>
-                    <button data-target="hotInput" data-direction="up">+</button>
-                </div>
-            </div>
-
-            <!-- MORNOS -->
-            <div class="input-row">
-                <div class="input-info">
-                    <strong>Leads Mornos</strong><br>
-                    Intenção moderada<br>
-                    <span class="input-credit-tag">1 crédito</span>
-                </div>
-                <div class="stepper">
-                    <button data-target="warmInput" data-direction="down">-</button>
-                    <input id="warmInput" type="number" value="0" min="0"/>
-                    <button data-target="warmInput" data-direction="up">+</button>
-                </div>
-            </div>
-
-            <!-- FRIOS -->
-            <div class="input-row">
-                <div class="input-info">
-                    <strong>Leads Frios</strong><br>
-                    Baixa intenção<br>
-                    <span class="input-credit-tag">0,5 crédito</span>
-                </div>
-                <div class="stepper">
-                    <button data-target="coldInput" data-direction="down">-</button>
-                    <input id="coldInput" type="number" value="0" min="0"/>
-                    <button data-target="coldInput" data-direction="up">+</button>
+                <div class="lead-block">
+                    <div class="lead-info">
+                        <div class="lead-title">Leads frios</div>
+                        <div class="lead-subtitle">Baixa intenção</div>
+                        <span class="lead-tag">0,5 crédito por lead</span>
+                    </div>
+                    <div class="stepper">
+                        <button data-target="coldInput" data-direction="down">−</button>
+                        <input id="coldInput" type="number" min="0" value="0">
+                        <button data-target="coldInput" data-direction="up">+</button>
+                    </div>
                 </div>
             </div>
 
-        </div>
+            <!-- Funil -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                    <div>
+                        <div class="card-title">Funil de Oportunidades</div>
+                        <div class="card-subtitle">Créditos → Oportunidades → Fechamentos</div>
+                    </div>
+                </div>
+                <div class="divider"></div>
 
-        <!-- CARD 3 – Funil -->
-        <div class="card">
-
-            <div class="card-header">
-                <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
-                <div>
-                    <div class="card-title">Funil de Oportunidades</div>
-                    <div class="card-subtitle">Créditos → Oportunidades → Fechamentos</div>
+                <div class="summary-grid">
+                    <div class="summary-box">
+                        <div class="summary-label">Créditos gastos</div>
+                        <div class="summary-value" id="creditsSpentDisplay">0</div>
+                    </div>
+                    <div class="summary-box">
+                        <div class="summary-label">Oportunidades totais</div>
+                        <div class="summary-value" id="totalOpportunitiesDisplay">0</div>
+                    </div>
+                    <div class="summary-box">
+                        <div class="summary-label">Fechamentos mínimos (10%)</div>
+                        <div class="summary-value" id="minClosuresDisplay">0</div>
+                    </div>
+                    <div class="summary-box">
+                        <div class="summary-label">Fechamentos máximos (25%)</div>
+                        <div class="summary-value" id="maxClosuresDisplay">0</div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="summary-grid">
-                <div class="summary-box">
-                    <div class="summary-box-title">Créditos Gastos</div>
-                    <div class="summary-box-value" id="creditsSpentDisplay">0</div>
+        <!-- ROI -->
+        <section class="bottom-row">
+            <div class="card roi-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <div>
+                        <div class="card-title">ROI (Retorno Financeiro)</div>
+                        <div class="card-subtitle">Resultado estimado do seu funil</div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+
+                <div class="roi-row">
+                    <span class="roi-label">Ticket médio por consultoria:</span>
+                    <span class="roi-value" id="ticketDisplay">R$ 250,00</span>
+                </div>
+                <div class="roi-row">
+                    <span class="roi-label">Receita potencial mínima (10%):</span>
+                    <span class="roi-value" id="minRevenueDisplay">R$ 0,00</span>
+                </div>
+                <div class="roi-row">
+                    <span class="roi-label">Receita potencial máxima (25%):</span>
+                    <span class="roi-value" id="maxRevenueDisplay">R$ 0,00</span>
+                </div>
+                <div class="roi-row">
+                    <span class="roi-label">Custo estimado de créditos extras:</span>
+                    <span class="roi-value" id="creditsCostDisplay">R$ 0,00</span>
+                </div>
+                <div class="roi-row">
+                    <span class="roi-label">Investimento total (plataforma + créditos):</span>
+                    <span class="roi-value" id="investmentDisplay">R$ 165,00</span>
+                </div>
+                <div class="roi-row">
+                    <span class="roi-label">ROI estimado mínimo:</span>
+                    <span class="roi-value" id="roiMinDisplay">R$ 0,00</span>
+                </div>
+                <div class="roi-row">
+                    <span class="roi-label">ROI estimado máximo:</span>
+                    <span class="roi-value" id="roiMaxDisplay">R$ 0,00</span>
                 </div>
 
-                <div class="summary-box">
-                    <div class="summary-box-title">Oportunidades Totais</div>
-                    <div class="summary-box-value" id="totalOpportunitiesDisplay">0</div>
+                <div id="roiBadge" class="roi-badge negative">
+                    Retorno potencial ainda não atingido
                 </div>
 
-                <div class="summary-box">
-                    <div class="summary-box-title">Fechamentos Mínimos (10%)</div>
-                    <div class="summary-box-value" id="minClosuresDisplay">0</div>
-                </div>
-
-                <div class="summary-box">
-                    <div class="summary-box-title">Fechamentos Máximos (25%)</div>
-                    <div class="summary-box-value" id="maxClosuresDisplay">0</div>
+                <div class="roi-note">
+                    Considera o investimento fixo da plataforma (R$ 165,00) somado ao custo dos créditos extras,
+                    comparado à receita potencial mínima e máxima.
                 </div>
             </div>
-
-        </div>
-
-    </div>
-
-    <!-- ROI CARD (separado abaixo do funil) -->
-    <div class="card roi-card" style="margin-top:25px; max-width: 380px;">
-
-        <div class="card-header">
-            <div class="icon-box"><i class="fa-solid fa-arrow-trend-up"></i></div>
-            <div>
-                <div class="card-title">4ª Etapa: ROI (Retorno Financeiro)</div>
-                <div class="card-subtitle">Análise final dos resultados</div>
-            </div>
-        </div>
-
-        <div class="roi-row">
-            <span class="roi-label">Ticket médio:</span>
-            <span class="roi-value" id="ticketDisplay">R$ 250,00</span>
-        </div>
-
-        <div class="roi-row">
-            <span class="roi-label">Receita mínima:</span>
-            <span class="roi-value" id="minRevenueDisplay">R$ 0,00</span>
-        </div>
-
-        <div class="roi-row">
-            <span class="roi-label">Receita máxima:</span>
-            <span class="roi-value" id="maxRevenueDisplay">R$ 0,00</span>
-        </div>
-
-        <div class="roi-row">
-            <span class="roi-label">Investimento total:</span>
-            <span class="roi-value" id="investmentDisplay">R$ 165,00</span>
-        </div>
-
-        <div class="roi-row">
-            <span class="roi-label">ROI mínimo:</span>
-            <span class="roi-value" id="roiMinDisplay">R$ 0,00</span>
-        </div>
-
-        <div class="roi-row">
-            <span class="roi-label">ROI máximo:</span>
-            <span class="roi-value" id="roiMaxDisplay">R$ 0,00</span>
-        </div>
-
-        <div id="roiBadge" class="roi-badge negative">Retorno potencial ainda não atingido</div>
-    </div>
-
+        </section>
+    </main>
 </div>
 
 <script>
-    const COSTS = { hot: 2, warm: 1, cold: 0.5 };
     const INITIAL_CREDITS = 15;
     const PLATFORM_INVESTMENT = 165;
-    const TICKET = 250;
+    const VALUE_PER_CONSULTATION = 250;
 
-    function formatBRL(v) {
-        return v.toLocaleString("pt-BR", { style:"currency", currency:"BRL" });
+    const COSTS = {
+        hot: 2,
+        warm: 1,
+        cold: 0.5
+    };
+
+    const inputs = {
+        hot: document.getElementById("hotInput"),
+        warm: document.getElementById("warmInput"),
+        cold: document.getElementById("coldInput")
+    };
+
+    const requiredCreditsDisplay = document.getElementById("requiredCreditsDisplay");
+    const creditsSpentDisplay = document.getElementById("creditsSpentDisplay");
+    const totalOpportunitiesDisplay = document.getElementById("totalOpportunitiesDisplay");
+    const minClosuresDisplay = document.getElementById("minClosuresDisplay");
+    const maxClosuresDisplay = document.getElementById("maxClosuresDisplay");
+
+    const ticketDisplay = document.getElementById("ticketDisplay");
+    const minRevenueDisplay = document.getElementById("minRevenueDisplay");
+    const maxRevenueDisplay = document.getElementById("maxRevenueDisplay");
+    const creditsCostDisplay = document.getElementById("creditsCostDisplay");
+    const investmentDisplay = document.getElementById("investmentDisplay");
+    const roiMinDisplay = document.getElementById("roiMinDisplay");
+    const roiMaxDisplay = document.getElementById("roiMaxDisplay");
+    const roiBadge = document.getElementById("roiBadge");
+
+    function formatCurrency(value) {
+        return new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }).format(value);
     }
 
-    function update() {
-        const hot = parseInt(document.getElementById("hotInput").value) || 0;
-        const warm = parseInt(document.getElementById("warmInput").value) || 0;
-        const cold = parseInt(document.getElementById("coldInput").value) || 0;
+    function parseNonNegativeInt(value) {
+        const n = parseInt(value, 10);
+        if (isNaN(n) || n < 0) {
+            return 0;
+        }
+        return n;
+    }
 
-        const creditsSpent = hot*COSTS.hot + warm*COSTS.warm + cold*COSTS.cold;
-        document.getElementById("creditsSpentDisplay").textContent = creditsSpent.toFixed(1);
+    function calculateBestPackageCombination(requiredCredits) {
+        if (requiredCredits <= 0) {
+            return { packages10: 0, packages20: 0, cost: 0 };
+        }
+
+        let bestCost = null;
+        let best10 = 0;
+        let best20 = 0;
+        const max20 = Math.ceil(requiredCredits / 20) + 1;
+
+        for (let p20 = 0; p20 <= max20; p20++) {
+            const creditsFrom20 = p20 * 20;
+            const remaining = Math.max(0, requiredCredits - creditsFrom20);
+            const p10 = remaining > 0 ? Math.ceil(remaining / 10) : 0;
+            const totalCredits = creditsFrom20 + p10 * 10;
+            if (totalCredits <= 0) {
+                continue;
+            }
+            const cost = p20 * 200 + p10 * 120;
+            if (bestCost === null || cost < bestCost) {
+                bestCost = cost;
+                best20 = p20;
+                best10 = p10;
+            }
+        }
+
+        if (bestCost === null) {
+            return { packages10: 0, packages20: 0, cost: 0 };
+        }
+        return { packages10: best10, packages20: best20, cost: bestCost };
+    }
+
+    function updateCalculations() {
+        const hot = parseNonNegativeInt(inputs.hot.value);
+        const warm = parseNonNegativeInt(inputs.warm.value);
+        const cold = parseNonNegativeInt(inputs.cold.value);
+
+        const creditsSpent =
+            hot * COSTS.hot +
+            warm * COSTS.warm +
+            cold * COSTS.cold;
+
+        creditsSpentDisplay.textContent = creditsSpent.toFixed(1);
 
         const opportunities = hot + warm + cold;
-        document.getElementById("totalOpportunitiesDisplay").textContent = opportunities;
+        totalOpportunitiesDisplay.textContent = opportunities.toString();
 
         const minClosures = opportunities * 0.10;
         const maxClosures = opportunities * 0.25;
-        document.getElementById("minClosuresDisplay").textContent = minClosures.toFixed(1);
-        document.getElementById("maxClosuresDisplay").textContent = maxClosures.toFixed(1);
+        minClosuresDisplay.textContent = minClosures.toFixed(1);
+        maxClosuresDisplay.textContent = maxClosures.toFixed(1);
 
-        const balance = INITIAL_CREDITS - creditsSpent;
-        const required = balance < 0 ? -balance : 0;
-        document.getElementById("requiredCreditsDisplay").textContent = required.toFixed(1);
+        const currentBalance = INITIAL_CREDITS - creditsSpent;
+        const requiredCredits = currentBalance < 0 ? -currentBalance : 0;
+        requiredCreditsDisplay.textContent = requiredCredits.toFixed(1);
 
-        const minRevenue = minClosures * TICKET;
-        const maxRevenue = maxClosures * TICKET;
+        const combo = calculateBestPackageCombination(requiredCredits);
+        const creditsCost = combo.cost;
+        const totalInvestment = PLATFORM_INVESTMENT + creditsCost;
 
-        document.getElementById("minRevenueDisplay").textContent = formatBRL(minRevenue);
-        document.getElementById("maxRevenueDisplay").textContent = formatBRL(maxRevenue);
+        const minRevenue = minClosures * VALUE_PER_CONSULTATION;
+        const maxRevenue = maxClosures * VALUE_PER_CONSULTATION;
+        const roiMin = minRevenue - totalInvestment;
+        const roiMax = maxRevenue - totalInvestment;
 
-        const investment = PLATFORM_INVESTMENT;
-        document.getElementById("investmentDisplay").textContent = formatBRL(investment);
-
-        const roiMin = minRevenue - investment;
-        const roiMax = maxRevenue - investment;
-
-        document.getElementById("roiMinDisplay").textContent = formatBRL(roiMin);
-        document.getElementById("roiMaxDisplay").textContent = formatBRL(roiMax);
-
-        const badge = document.getElementById("roiBadge");
+        ticketDisplay.textContent = formatCurrency(VALUE_PER_CONSULTATION);
+        minRevenueDisplay.textContent = formatCurrency(minRevenue);
+        maxRevenueDisplay.textContent = formatCurrency(maxRevenue);
+        creditsCostDisplay.textContent = formatCurrency(creditsCost);
+        investmentDisplay.textContent = formatCurrency(totalInvestment);
+        roiMinDisplay.textContent = formatCurrency(roiMin);
+        roiMaxDisplay.textContent = formatCurrency(roiMax);
 
         if (roiMax > 0) {
-            badge.textContent = "Retorno potencial positivo";
-            badge.classList.remove("negative");
-            badge.classList.add("positive");
+            roiBadge.textContent = "Retorno potencial positivo";
+            roiBadge.classList.remove("negative");
+            roiBadge.classList.add("positive");
         } else {
-            badge.textContent = "Retorno potencial ainda não atingido";
-            badge.classList.remove("positive");
-            badge.classList.add("negative");
+            roiBadge.textContent = "Retorno potencial ainda não atingido";
+            roiBadge.classList.remove("positive");
+            roiBadge.classList.add("negative");
         }
     }
 
-    document.querySelectorAll(".stepper button").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const input = document.getElementById(btn.dataset.target);
-            let v = parseInt(input.value) || 0;
-            v = btn.dataset.direction === "up" ? v + 1 : Math.max(0, v - 1);
-            input.value = v;
-            update();
+    document.querySelectorAll(".stepper button").forEach(function (button) {
+        button.addEventListener("click", function () {
+            const targetId = button.getAttribute("data-target");
+            const direction = button.getAttribute("data-direction");
+            const input = document.getElementById(targetId);
+            if (!input) {
+                return;
+            }
+            let value = parseNonNegativeInt(input.value);
+            if (direction === "up") {
+                value += 1;
+            } else {
+                value = Math.max(0, value - 1);
+            }
+            input.value = value.toString();
+            updateCalculations();
         });
     });
 
-    document.querySelectorAll("input").forEach(inp => {
-        inp.addEventListener("input", update);
+    Object.values(inputs).forEach(function (inputElement) {
+        inputElement.addEventListener("input", function () {
+            if (inputElement.value === "") {
+                inputElement.value = "0";
+            }
+            if (parseInt(inputElement.value, 10) < 0) {
+                inputElement.value = "0";
+            }
+            updateCalculations();
+        });
     });
 
-    update();
+    updateCalculations();
 </script>
-
 </body>
 </html>
